@@ -183,3 +183,35 @@ while True:
         break
     else:
         print("Option non valide.")
+
+#Exo : Convertisseur Température : créez une fonction qui convertit les températeurs entre Celsius et Fahrenheit.
+
+def convertir_temperature(temp, unite):
+    if unite == "C":
+        return (temp * 9/5) + 32
+    elif unite == "F":
+        return (temp - 32) * 5/9
+    else:
+        return "Unité non reconnue."
+
+# Exemple de conversion
+temp_celsius = 30
+temp_fahrenheit = convertir_temperature(temp_celsius, "C")
+print(f"{temp_celsius}C est équivalent à {temp_fahrenheit}F")
+
+temp_fahrenheit = 86
+temp_celsius = convertir_temperature(temp_fahrenheit, "F")
+print(f"{temp_fahrenheit}F est équivalent à {temp_celsius}C")
+
+#Exo : Calculateur d'IMC : écrivez une fonction qui calcule l'Indice de Masse Corporelle (IMC) à partir de la taille et du poids données.
+
+def calculer_imc(poids, taille):
+    imc = poids / (taille ** 2)
+    return imc
+
+# Exemple d'utilisation
+poids = 70 # en kilogrammes
+taille = 1.75 # en mètres
+
+imc = calculer_imc(poids, taille)
+print(f"L'IMC calculé est : {imc:.2f}")
