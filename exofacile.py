@@ -144,3 +144,42 @@ intersection = ensemble1 & ensemble2
 # Afficher les résultats
 print("Union:", union)
 print("Intersection:", intersection)
+
+#Exo :écrivez un programme qui stocke les noms et numéro de téléphone des contacts dans un dictionnaire et permet à l'utilisateur d'ajouter, supprimer ou rechercher un contact 
+
+contacts = {}
+
+def ajouter_contact():
+    nom = input("Entrez le nom du contact : ")
+    numero = input("Entrez le numéro de téléphone : ")
+    contacts[nom] = numero
+    print("Contact ajouté.")
+
+def supprimer_contact():
+    nom = input("Entrez le nom du contact à supprimer : ")
+    if nom in contacts:
+        del contacts[nom]
+        print("Contact supprimé.")
+    else:
+        print("Contact non trouvé.")
+
+def rechercher_contact():
+    nom = input("Entrez le nom du contact à rechercher : ")
+    if nom in contacts:
+        print("Numéro de téléphone :", contacts[nom])
+    else:
+        print("Contact non trouvé.")
+
+while True:
+    choix = input("Choisissez une option: ajouter, supprimer, rechercher, quitter : ").lower()
+    if choix == 'ajouter':
+        ajouter_contact()
+    elif choix == 'supprimer':
+        supprimer_contact()
+    elif choix == 'rechercher':
+        rechercher_contact()
+    elif choix == 'quitter':
+        print("Programme terminé.")
+        break
+    else:
+        print("Option non valide.")
