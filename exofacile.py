@@ -129,3 +129,18 @@ print("Nom:", personne["nom"])
 # Afficher le dictionnaire complet
 print(personne)
 
+#Exo 3 chapitre 4 : Définissez deux ensembles et effectuez des opérations comme l'union et l'intersection.
+
+# Définir deux ensembles
+ensemble1 = {1, 2, 3, 4, 5}
+ensemble2 = {4, 5, 6, 7, 8}
+
+# Union des ensembles
+union = ensemble1 | ensemble2
+
+# Intersection des ensembles
+intersection = ensemble1 & ensemble2
+
+# Afficher les résultats
+print("Union:", union)
+print("Intersection:", intersection)
