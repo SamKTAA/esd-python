@@ -91,3 +91,41 @@ for i in range(N):
     for j in range(N):
         print(carre[i][j], end=' ')
     print()
+
+#Exo 1 chapitre 4 : Manipulation de Listes
+Créez une liste de nombres, ajoutez-y des éléments, puis triez-la.
+
+# Créer une liste de nombres
+ma_liste = [5, 3, 1, 4, 2]
+
+# Ajouter des éléments
+ma_liste.append(6)
+ma_liste.append(7)
+
+# Trier la liste
+ma_liste.sort()
+
+# Afficher la liste triée
+print(ma_liste)
+
+#Exo 2 chapitre 4 : Créez un dictionnaire représentant une personne, incluant des informations telles que le nom, l'âge, et l'adresse.
+
+# Créer un dictionnaire représentant une personne
+personne = {
+    "nom": "Dupont",
+    "age": 30,
+    "adresse": "123 rue de la Paix"
+}
+
+# Ajouter des informations
+personne["telephone"] = "0123456789"
+
+# Modifier des informations
+personne["adresse"] = "456 avenue de la Liberté"
+
+# Afficher des informations spécifiques
+print("Nom:", personne["nom"])
+
+# Afficher le dictionnaire complet
+print(personne)
+
