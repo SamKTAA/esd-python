@@ -145,7 +145,7 @@ intersection = ensemble1 & ensemble2
 print("Union:", union)
 print("Intersection:", intersection)
 
-#Exo :écrivez un programme qui stocke les noms et numéro de téléphone des contacts dans un dictionnaire et permet à l'utilisateur d'ajouter, supprimer ou rechercher un contact 
+#Exo : Gestionnaire de contacts : écrivez un programme qui stocke les noms et numéro de téléphone des contacts dans un dictionnaire et permet à l'utilisateur d'ajouter, supprimer ou rechercher un contact 
 
 contacts = {}
 
