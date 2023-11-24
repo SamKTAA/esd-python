@@ -50,3 +50,44 @@ if mot == mot_inverse:
     print(mot, "est un palindrome.")
 else:
     print(mot, "n'est pas un palindrome.")
+
+#Exo6 
+N = int(input("Entrez un nombre impair pour la taille du carré magique : "))
+
+# Vérification si N est impair
+if N % 2 == 0:
+    print("Le nombre doit être impair.")
+    exit()
+
+# Création d'une matrice N x N initialisée à 0
+carre = [[0]*N for _ in range(N)]
+
+# Position de départ
+i = N // 2
+j = N - 1
+
+# Placement des nombres
+for num in range(1, N*N + 1):
+    if i == -1 and j == N: # Cas particulier
+        j = N - 2
+        i = 0
+    else:
+        if j == N:
+            j = 0
+        if i < 0:
+            i = N - 1
+            
+    if carre[i][j]: # Cellule déjà remplie
+        j -= 2
+        i += 1
+        continue
+    else:
+        carre[i][j] = num
+        i -= 1
+        j += 1
+
+# Affichage du carré magique
+for i in range(N):
+    for j in range(N):
+        print(carre[i][j], end=' ')
+    print()
