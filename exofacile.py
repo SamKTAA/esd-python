@@ -118,7 +118,7 @@ personne = {
 }
 
 # Ajouter des informations
-personne["telephone"] = "0123456789"
+personne["telephone"] = "0618293021"
 
 # Modifier des informations
 personne["adresse"] = "456 avenue de la Liberté"
