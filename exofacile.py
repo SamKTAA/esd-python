@@ -215,3 +215,21 @@ taille = 1.75 # en mètres
 
 imc = calculer_imc(poids, taille)
 print(f"L'IMC calculé est : {imc:.2f}")
+
+#Exo : Tri de liste : écrivez une fonction qui prend une liste de nombres et retourne une liste triée sans utiliser la méthode .sort()
+
+def tri_par_insertion(liste):
+    liste_triee = liste.copy()
+    for i in range(1, len(liste_triee)):
+        element_a_inserer = liste_triee[i]
+        j = i - 1
+        while j >= 0 and liste_triee[j] > element_a_inserer:
+            liste_triee[j + 1] = liste_triee[j]
+            j -= 1
+        liste_triee[j + 1] = element_a_inserer
+    return liste_triee
+
+ma_liste = [3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5]
+liste_triee = tri_par_insertion(ma_liste)
+print("Liste originale:", ma_liste)
+print("Liste triée:", liste_triee)
