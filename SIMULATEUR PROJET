@@ -1,0 +1,56 @@
+import tkinter as tk
+from tkinter import messagebox
+
+def calculer_rendement_net(prix_bien, loyer_mensuel):
+    return (loyer_mensuel * 12 / prix_bien) * 100
+
+def calculer_cashflow(loyer_mensuel, couts_annuels):
+    return loyer_mensuel * 12 - couts_annuels
+
+def calculer_enrichissement(prix_bien, augmentation_annuelle):
+    return prix_bien * augmentation_annuelle / 100
+
+def soumettre():
+    try:
+        prix_bien = float(prix_bien_entry.get())
+        loyer_mensuel = float(loyer_mensuel_entry.get())
+        couts_annuels = float(couts_annuels_entry.get())
+        augmentation_annuelle = float(augmentation_annuelle_entry.get())
+
+        rendement_net = calculer_rendement_net(prix_bien, loyer_mensuel)
+        cashflow = calculer_cashflow(loyer_mensuel, couts_annuels)
+        enrichissement = calculer_enrichissement(prix_bien, augmentation_annuelle)
+
+        messagebox.showinfo("Résultats", f"Rendement net: {rendement_net:.2f}%\n"
+                                         f"Cashflow annuel: {cashflow:.2f}€\n"
+                                         f"Enrichissement annuel: {enrichissement:.2f}€")
+    except ValueError:
+        messagebox.showerror("Erreur", "Veuillez entrer des valeurs numériques valides.")
+
+# Création de la fenêtre
+root = tk.Tk()
+root.title("Simulateur Investissement Immobilier Locatif")
+
+# Création des champs de saisie
+tk.Label(root, text="Prix du bien (€):").pack()
+prix_bien_entry = tk.Entry(root)
+prix_bien_entry.pack()
+
+tk.Label(root, text="Loyer mensuel (€):").pack()
+loyer_mensuel_entry = tk.Entry(root)
+loyer_mensuel_entry.pack()
+
+tk.Label(root, text="Coûts annuels (€):").pack()
+couts_annuels_entry = tk.Entry(root)
+couts_annuels_entry.pack()
+
+tk.Label(root, text="Augmentation annuelle (%):").pack()
+augmentation_annuelle_entry = tk.Entry(root)
+augmentation_annuelle_entry.pack()
+
+# Bouton de soumission
+submit_button = tk.Button(root, text="Calculer", command=soumettre)
+submit_button.pack()
+
+# Lancement de l'application
+root.mainloop()
